@@ -1,0 +1,149 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Sectorial de Informática del Ministerio de Obras Públicas" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<nav class="navbar">
+			<div class="nav-content">
+				<div class="logo">
+					<img src="/public/logo.png" alt="Logo Ministerio de Obras Públicas Santa Fe" />
+				</div>
+				<div class="nav-links">
+					<a href="#principios">Principios</a>
+					<a href="#proyectos">Proyectos</a>
+					<a href="#contacto">Contacto</a>
+				</div>
+			</div>
+		</nav>
+		<slot />
+		<footer class="footer">
+			<div class="footer-content">
+				<div class="footer-info">
+					<p>&copy; {new Date().getFullYear()} Ministerio de Obras Públicas</p>
+					<p>Sectorial de Informática</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--color-yellow: #FFCB02;
+		--color-orange: #FF7402;
+		--color-pink: #FF6D7E;
+		--color-red: #E42153;
+		--color-purple: #3C3AE5;
+		--text-color: #333333;
+		--background-color: #ffffff;
+		--gradient-main: linear-gradient(90deg, 
+			var(--color-yellow) 0%,
+			var(--color-orange) 25%,
+			var(--color-pink) 50%,
+			var(--color-red) 75%,
+			var(--color-purple) 100%
+		);
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		background-color: var(--background-color);
+		color: var(--text-color);
+		padding-top: 70px;
+	}
+
+	.navbar {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background-color: white;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		z-index: 1000;
+		height: 70px;
+	}
+
+	.nav-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0.5rem 2rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+
+	.logo {
+		height: 50px;
+		display: flex;
+		align-items: center;
+	}
+
+	.logo img {
+		height: 40px;
+		width: auto;
+	}
+
+	.nav-links {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.nav-links a {
+		color: var(--text-color);
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.nav-links a:hover {
+		color: var(--color-purple);
+	}
+
+	.footer {
+		background: var(--gradient-main);
+		color: white;
+		padding: 2rem;
+		margin-top: 4rem;
+	}
+
+	.footer-content {
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.footer-info p {
+		margin: 0.5rem 0;
+	}
+
+	@media (max-width: 768px) {
+		.nav-links {
+			display: none;
+		}
+	}
+</style>

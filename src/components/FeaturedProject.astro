@@ -1,0 +1,170 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	image?: string;
+	video?: string;
+	tags: string[];
+}
+
+const { title, description, image, video, tags } = Astro.props;
+---
+
+<div class="featured-project">
+	<div class="featured-content">
+		<div class="featured-info">
+			<h3>{title}</h3>
+			<p>{description}</p>
+			<div class="tags">
+				{tags.map((tag) => <span class="tag">{tag}</span>)}
+			</div>
+			<div class="integration-info">
+				<h4>Integración con otros sistemas</h4>
+				<ul>
+					<li>✓ Sistema de Gestión de Obras (SGO)</li>
+					<li>✓ SIPAF</li>
+					<li>✓ Rendición de Cuentas</li>
+				</ul>
+			</div>
+		</div>
+		<div class="featured-media">
+			{video ? (
+				<div class="video-container">
+				<iframe
+	src={`https://www.youtube.com/embed/${video.split('/').pop()}`}
+	title={title}
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+	allowfullscreen
+></iframe>
+				</div>
+			) : (
+				<div class="featured-image">
+					<img src={image} alt={title} />
+				</div>
+			)}
+		</div>
+	</div>
+</div>
+
+<style>
+	.featured-project {
+		background: white;
+		border-radius: 1.5rem;
+		margin-bottom: 3rem;
+		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+		border: 2px solid var(--color-purple);
+		overflow: hidden;
+	}
+
+	.featured-content {
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		gap: 2rem;
+		padding: 2rem;
+	}
+
+	.featured-info {
+		padding: 1rem;
+	}
+
+	h3 {
+		font-size: 2.5rem;
+		color: var(--color-purple);
+		margin-bottom: 1rem;
+	}
+
+	p {
+		color: var(--text-color);
+		font-size: 1.125rem;
+		line-height: 1.6;
+		margin-bottom: 1.5rem;
+	}
+
+	.featured-media {
+		position: relative;
+		height: 100%;
+		min-height: 300px;
+		border-radius: 1rem;
+		overflow: hidden;
+	}
+
+	.video-container {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 aspect ratio */
+		height: 0;
+		overflow: hidden;
+		border-radius: 1rem;
+	}
+
+	.video-container iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border: none;
+	}
+
+	.featured-image {
+		height: 100%;
+		min-height: 300px;
+	}
+
+	.featured-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.tag {
+		background-color: var(--color-pink);
+		color: white;
+		padding: 0.25rem 0.75rem;
+		border-radius: 9999px;
+		font-size: 0.875rem;
+	}
+
+	.integration-info {
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border-radius: 1rem;
+		margin-top: 1.5rem;
+	}
+
+	.integration-info h4 {
+		color: var(--color-purple);
+		margin-bottom: 1rem;
+		font-size: 1.125rem;
+	}
+
+	.integration-info ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	.integration-info li {
+		margin-bottom: 0.5rem;
+		color: var(--text-color);
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	@media (max-width: 768px) {
+		.featured-content {
+			grid-template-columns: 1fr;
+		}
+
+		.featured-media {
+			min-height: 200px;
+		}
+	}
+</style>

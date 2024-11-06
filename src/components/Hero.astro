@@ -1,0 +1,83 @@
+---
+---
+
+<section class="hero">
+	<div class="hero-content">
+		<h1>Sectorial de Informática</h1>
+		<p class="subtitle">Ministerio de Obras Públicas</p>
+		<p class="description">
+			Innovando en la gestión pública a través de soluciones tecnológicas integradas
+		</p>
+		<div class="cta-buttons">
+			<a href="#proyectos" class="primary-button">Ver Proyectos</a>
+			<a href="#principios" class="secondary-button">Conoce Nuestros Principios</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.hero {
+		background: var(--gradient-main);
+		min-height: 80vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		padding: 2rem;
+	}
+
+	.hero-content {
+		max-width: 800px;
+	}
+
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 700;
+		margin-bottom: 0.5rem;
+	}
+
+	.subtitle {
+		font-size: 1.5rem;
+		margin-bottom: 1.5rem;
+		color: var(--color-yellow);
+	}
+
+	.description {
+		font-size: 1.25rem;
+		margin-bottom: 2rem;
+		line-height: 1.6;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.primary-button,
+	.secondary-button {
+		padding: 1rem 2rem;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		font-weight: 600;
+		transition: transform 0.3s ease;
+	}
+
+	.primary-button {
+		background-color: var(--color-yellow);
+		color: var(--text-color);
+	}
+
+	.secondary-button {
+		background-color: transparent;
+		color: white;
+		border: 2px solid var(--color-yellow);
+	}
+
+	.primary-button:hover,
+	.secondary-button:hover {
+		transform: translateY(-2px);
+	}
+</style>

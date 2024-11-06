@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import PrincipleCard from '../components/PrincipleCard.astro';
+import FeaturedProject from '../components/FeaturedProject.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Layout title="Sectorial de Informática - MOP">
+	<main>
+		<Hero />
+		
+		<section id="principios" class="principles-section">
+			<h2>Nuestros Principios</h2>
+			<div class="principles-grid">
+				<PrincipleCard
+					icon="🔄"
+					title="Interoperabilidad"
+					description="Garantizamos que nuestros sistemas se comuniquen eficientemente entre sí y con otras instituciones."
+				/>
+				<PrincipleCard
+					icon="📐"
+					title="Hecho a Medida"
+					description="Desarrollamos soluciones específicas que se ajustan perfectamente a las necesidades de cada área."
+				/>
+				<PrincipleCard
+					icon="⚡"
+					title="Flexible y Escalable"
+					description="Nuestras soluciones crecen y se adaptan según las necesidades del ministerio."
+				/>
+				<PrincipleCard
+					icon="🔍"
+					title="Trazabilidad"
+					description="Aseguramos el seguimiento completo de cada proceso y transacción en nuestros sistemas."
+				/>
+				<PrincipleCard
+					icon="🛡️"
+					title="Seguridad"
+					description="Implementamos los estándares de seguridad provistos por la Secretaría de Tecnologías para la Gestión (STG) en todas nuestras soluciones."
+				/>
+				<PrincipleCard
+					icon="🔄"
+					title="Adaptabilidad"
+					description="Nuestros sistemas evolucionan constantemente para satisfacer nuevos requerimientos."
+				/>
+				<PrincipleCard
+					icon="👥"
+					title="Multirol"
+					description="Sistemas que adaptan sus funcionalidades según el rol del usuario, optimizando la experiencia y el control de acceso."
+				/>
+				<PrincipleCard
+					icon="🔗"
+					title="Transversalidad"
+					description="Soluciones que atraviesan múltiples áreas del ministerio, facilitando la gestión integral de procesos."
+				/>
+			</div>
+		</section>
+
+		<section id="proyectos" class="projects-section">
+			<h2>Proyectos Destacados</h2>
+			<div class="projects-container">
+				<FeaturedProject
+					title="BaPPi"
+					description="Sistema de información para la gestión de inversiones públicas en la provincia de Santa Fe. Registra y evalúa proyectos de inversión, facilitando su incorporación al presupuesto provincial."
+					video="https://youtu.be/jdmqeWglTag"
+					tags={['Inversión Pública', 'Gestión', 'Presupuesto', 'Integración']}
+				/>
+				<div class="projects-grid">
+					<ProjectCard
+						title="Sistema de Gestión de Obras (SGO)"
+						description="Sistema centralizado para la gestión y trazabilidad de la obra pública."
+						video="https://youtu.be/AmkTRhrmXdk"
+						tags={['Gestión', 'Obras Públicas', 'Trazabilidad']}
+					/>
+					<ProjectCard
+						title="Vacco"
+						description="Aplicación destinada al cálculo e información de los índices utilizados para las redeterminaciones de Precios de la Obra Pública."
+						image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f8f9fa'/%3E%3Ctext x='200' y='140' text-anchor='middle' font-family='Arial' font-size='24' font-weight='bold' fill='%233C3AE5'%3EVersion Beta%3C/text%3E%3Ctext x='200' y='170' text-anchor='middle' font-family='Arial' font-size='20' fill='%23333'%3Eproximamente disponible%3C/text%3E%3C/svg%3E"
+						tags={['Costos', 'Redeterminación', 'Índices']}
+					/>
+					<ProjectCard
+						title="Rendición de Cuentas"
+						description="Gestiona la rendición de Cuentas de los subsidios y convenios entregados a terceros para obras ejecutadas por Administración Delegada."
+						video="https://youtu.be/EqHWcSchwpE"
+						tags={['Rendición', 'Contabilidad', 'Gestión']}
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section id="tecnologia" class="tech-section">
+			<h2>Tecnología Utilizada</h2>
+			<div class="tech-container">
+				<p class="tech-intro">Utilizamos las últimas tecnologías disponibles para garantizar el mejor rendimiento y seguridad en nuestras soluciones.</p>
+				<div class="tech-logos">
+					<div class="tech-logo">
+						<img src="https://symfony.com/logos/symfony_black_03.png" alt="Symfony" />
+						<span class="tech-version">5.4</span>
+					</div>
+					<div class="tech-logo">
+						<img src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP" />
+						<span class="tech-version">8.1</span>
+					</div>
+					<div class="tech-logo">
+						<img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL" />
+						<span class="tech-version">8.1</span>
+					</div>
+					<div class="tech-logo">
+						<img src="/public/logo.png" alt="Logo Provincia" />
+						<span class="tech-version">CAS</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contacto" class="contact-section">
+			<h2>Contacto</h2>
+			<div class="contact-content">
+				<p>Para más información, podés contactarnos:</p>
+				<div class="email-container">
+					<span class="email-icon">✉️</span>
+					<a href="mailto:sectorial_mop@santafe.gov.ar" class="email-link">sectorial_mop@santafe.gov.ar</a>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		width: 100%;
+		color: var(--text-color);
+		font-size: 16px;
+		line-height: 1.6;
+	}
+
+	section {
+		padding: 4rem 2rem;
+	}
+
+	h2 {
+		font-size: 2.5rem;
+		text-align: center;
+		margin-bottom: 3rem;
+		color: var(--color-purple);
+		position: relative;
+	}
+
+	h2::after {
+		content: '';
+		position: absolute;
+		bottom: -10px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100px;
+		height: 4px;
+		background: var(--gradient-main);
+		border-radius: 2px;
+	}
+
+	.principles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.projects-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.principles-section {
+		background-color: white;
+	}
+
+	.projects-section {
+		background-color: #f8f9fa;
+	}
+
+	.tech-section {
+		background-color: white;
+	}
+
+	.tech-container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.tech-intro {
+		text-align: center;
+		font-size: 1.2rem;
+		margin-bottom: 3rem;
+		color: var(--text-color);
+	}
+
+	.tech-logos {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 4rem;
+		flex-wrap: wrap;
+		padding: 2rem;
+	}
+
+	.tech-logo {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		transition: transform 0.3s ease;
+	}
+
+	.tech-logo:hover {
+		transform: translateY(-5px);
+	}
+
+	.tech-logo img {
+		height: 80px;
+		width: auto;
+		object-fit: contain;
+	}
+
+	.tech-version {
+		font-size: 1.1rem;
+		font-weight: 600;
+		color: var(--color-purple);
+	}
+
+	.contact-section {
+		background: var(--gradient-main);
+		color: white;
+		text-align: center;
+	}
+
+	.contact-section h2::after {
+		background: var(--color-yellow);
+	}
+
+	.contact-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.email-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.email-icon {
+		font-size: 1.5rem;
+	}
+
+	.email-link {
+		color: white;
+		text-decoration: none;
+		font-size: 1.2rem;
+		transition: all 0.3s ease;
+	}
+
+	.email-link:hover {
+		color: var(--color-yellow);
+		text-decoration: underline;
+	}
+
+	@media (max-width: 768px) {
+		.tech-logos {
+			gap: 2rem;
+		}
+
+		.tech-logo img {
+			height: 60px;
+		}
+	}
+</style>
